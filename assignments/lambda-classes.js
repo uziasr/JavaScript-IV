@@ -9,7 +9,23 @@ class Person {
         return `Hello my name is ${this.name}, I am from ${this.location}` 
     }
 }
-const fred = new Person({
+
+class Instructor extends Person{
+    constructor(attrs){
+        super(attrs)
+        this.specialty = attrs.specialty
+        this.favLanguage = attrs.favLanguage
+        this.catchPhrase = attrs.catchPhrase
+    }
+    demo(subject){
+        return (`Today we are learning about ${subject}`)
+    }
+    grade(studnetObj, subject){
+        returns `{student.name} receives a perfect score on ${subject}`
+    }
+}
+
+const fred = new Instructor({
     name: 'Fred',
     location: 'Bedrock',
     age: 37,
@@ -18,4 +34,5 @@ const fred = new Person({
     catchPhrase: `Don't forget the homies`
   });
 
-  console.log(fred.speak())
+console.log(fred.demo('python'))
+  
